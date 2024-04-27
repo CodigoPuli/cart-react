@@ -1,14 +1,32 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from 'react';
+import { Header } from './components/Header';
+import { ProductList } from './components/ProductList';
 
 function App() {
-  const [count, setCount] = useState(0)
-  return(
-    <h1>App</h1>
-  )
- 
+  const [allProducts, setAllProducts] = useState([]);
+  const [total, setTotal] = useState(0);
+  const [countProducts, setCountProducts] = useState(0);
+
+  return (
+    <>
+      <Header
+        allProducts={allProducts}
+        setAllProducts={setAllProducts}
+        total={total}
+        setTotal={setTotal}
+        countProducts={countProducts}
+        setCountProducts={setCountProducts}
+      />
+      <ProductList
+        allProducts={allProducts}
+        setAllProducts={setAllProducts}
+        total={total}
+        setTotal={setTotal}
+        countProducts={countProducts}
+        setCountProducts={setCountProducts}
+      />
+    </>
+  );
 }
 
-export default App
+export default App;
